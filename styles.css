@@ -7,10 +7,13 @@ body {
     font-family: Arial, sans-serif;
     background-color: hsl(0, 0%, 20%);
     color: #000000;
-    display: flex  ;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
+    padding: 10px;
+    box-sizing: border-box;
 }
 .cal{
     /* background-color: red; */
@@ -56,6 +59,8 @@ body {
     justify-content: center;
     align-items: center;
     user-select: none;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .cal .nav .left:hover,
@@ -109,6 +114,8 @@ body {
     font-size: 14px;
     font-weight: bold;
     transition: background-color 0.2s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .cal .nav .current .year-controls button:hover {
@@ -186,4 +193,145 @@ body {
 }
 .date.inactive:hover{
     color: #fff;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        height: 100vh;
+    }
+    
+    .cal {
+        height: 90vh;
+        width: 95vw;
+        max-width: 400px;
+        min-height: 500px;
+    }
+    
+    .cal .nav {
+        height: 15%;
+        padding: 0px 10px;
+        gap: 15%;
+    }
+    
+    .cal .nav .left,
+    .cal .nav .right {
+        width: 45px;
+        height: 45px;
+        font-size: 30px;
+    }
+    
+    .cal .nav .current {
+        gap: 3px;
+    }
+    
+    .cal .nav .current .month-display {
+        font-size: 16px;
+    }
+    
+    .cal .nav .current .year-controls {
+        gap: 8px;
+    }
+    
+    .cal .nav .current .year-controls .year-display {
+        font-size: 14px;
+        min-width: 40px;
+    }
+    
+    .cal .nav .current .year-controls button {
+        width: 22px;
+        height: 22px;
+        font-size: 12px;
+    }
+    
+    .cal .main .week {
+        font-size: 14px;
+    }
+    
+    .cal .main .week .day {
+        padding: 8px 3px;
+        font-size: 12px;
+    }
+    
+    .cal .main .dates {
+        margin: 5px;
+        gap: 1px;
+    }
+    
+    .cal .main .dates .date::before {
+        width: 30px;
+        height: 30px;
+    }
+    
+    .cal .main .dates .date span {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cal {
+        height: 85vh;
+        width: 98vw;
+        border-width: 2px;
+    }
+    
+    .cal .nav {
+        height: 12%;
+        padding: 0px 5px;
+        gap: 10%;
+        border-bottom-width: 2px;
+    }
+    
+    .cal .nav .left,
+    .cal .nav .right {
+        width: 35px;
+        height: 35px;
+        font-size: 24px;
+        border-width: 1px;
+    }
+    
+    .cal .nav .current .month-display {
+        font-size: 14px;
+    }
+    
+    .cal .nav .current .year-controls .year-display {
+        font-size: 12px;
+        min-width: 35px;
+    }
+    
+    .cal .nav .current .year-controls button {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
+    
+    .cal .main .week {
+        font-size: 12px;
+        border-bottom-width: 2px;
+    }
+    
+    .cal .main .week .day {
+        padding: 6px 2px;
+        font-size: 11px;
+        border-right-width: 2px;
+    }
+    
+    .cal .main .dates {
+        margin: 3px;
+    }
+    
+    .cal .main .dates .date {
+        border-width: 1px;
+        font-size: 12px;
+    }
+    
+    .cal .main .dates .date::before {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .cal .main .dates .date span {
+        font-size: 12px;
+    }
 }
